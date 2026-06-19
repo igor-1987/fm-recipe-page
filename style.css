@@ -1,11 +1,14 @@
+/* FONTS */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap');
 
+/* CSS VARS */
 :root {
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-brown: hsl(14, 45%, 36%);
   --clr-grey1: hsl(24, 5%, 18%);
   --clr-grey2: hsl(30, 10%, 34%);
   --clr-grey3: hsl(30, 18%, 87%);
   --clr-grey4: hsl(30, 54%, 90%);
-  --clr-brown: hsl(14, 45%, 36%);
   --clr-rose1: hsl(332, 51%, 32%);
   --clr-rose2: hsl(330, 100%, 98%);
   --ff-primary: "Yong Serif", serif;
@@ -15,6 +18,7 @@
   --shadow: 0.25rem 0.25rem 0.25rem hsla(0, 0%, 0%, 0.1);
 }
 
+/* GLOBAL STYLES */
 *,
 *::before,
 *::after {
@@ -63,6 +67,20 @@ ol {
   list-style-type: none;
 }
 
+.content {
+  padding: 0 2rem;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: var(--clr-grey3);
+}
+
+.intro {
+  font-weight: bold;
+}
+
 ul li::before {
   content: "•";
   font-size: 16px;
@@ -79,27 +97,26 @@ ol li::before {
   padding-right: 1rem;
 }
 
-ul.recipe-units li::before {
-  color: var(--clr-brown);
-}
-
-ul.prep-time-list li::before {
-  color: var(--clr-rose1);
-}
-
 ol li,
 ul li {
   margin-bottom: 0.25rem;
 }
 
-.divider {
-  height: 1px;
-  width: 100%;
-  background-color: var(--clr-grey3);
+/* SUMMARY SECTION */
+.recipe {
+  background-color: var(--clr-white);
+  box-shadow: var(--shadow);
+  width: clamp(23.5rem, 50vw, 39rem);
 }
 
+.page-title {
+  color: var(--clr-grey1);
+}
+
+/* PREPARATION TIME SECTION */
 .prep-time {
   padding: 2rem;
+  background-color: var(--clr-rose2);
 }
 
 .fragment-title {
@@ -108,24 +125,18 @@ ul li {
   font-weight: bold;
 }
 
-.recipe {
-  background-color: var(--clr-rose2);
-  box-shadow: var(--shadow);
-  width: clamp(23.5rem, 50vw, 39rem);
+ul.prep-time-list li::before {
+  color: var(--clr-rose1);
 }
 
-.content {
-  padding: 0 2rem;
+/* INGREDIENTS SECTION */
+ul.recipe-units li::before {
+  color: var(--clr-brown);
 }
 
-.page-title {
-  color: var(--clr-grey1);
-}
+/* INSTRUCTIONS SECTION - no specific styles for now */
 
-.intro {
-  font-weight: bold;
-}
-
+/* NUTRINION SECTION */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -149,7 +160,7 @@ td {
   color: var(--clr-brown);
 }
 
-
+/* MEDIA QUERIES */
 @media screen and (min-width: 376px) {
   body {
     padding: 5rem;
@@ -160,10 +171,11 @@ td {
   }
 
   .img-container {
-    padding: 1rem;
+    padding: 2rem;
   }
 
   img {
     border-radius: var(--border-radius2);
   }
 }
+
